@@ -1,0 +1,10 @@
+../Core/Src/main.c:88:6:task1ms	0	static
+../Core/Src/main.c:91:6:task5ms	8	static
+../Core/Src/main.c:98:6:task10ms	0	static
+../Core/Src/main.c:101:6:task50ms	0	static
+../Core/Src/main.c:104:6:task100ms	0	static
+../Core/Src/main.c:108:6:task500ms	8	static
+../Core/Src/main.c:116:6:task1000ms	0	static
+../Core/Src/main.c:218:6:SystemClock_Config	160	static,ignoring_inline_asm
+../Core/Src/main.c:126:5:main	48	static,ignoring_inline_asm
+../Core/Src/main.c:382:6:Error_Handler	0	static,ignoring_inline_asm

@@ -1,0 +1,10 @@
+14:57:30 **** Incremental Build of configuration Debug for project FIR ****
+make -j4 all 
+arm-none-eabi-size   FIR.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19016	     44	   1916	  20976	   51f0	FIR.elf
+Finished building: default.size.stdout
+ 
+
+14:57:32 Build Finished. 0 errors, 0 warnings. (took 1s.936ms)
+

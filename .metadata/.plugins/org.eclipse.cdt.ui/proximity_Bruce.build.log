@@ -1,0 +1,70 @@
+10:37:35 **** Incremental Build of configuration Debug for project proximity_Bruce ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:113:1: warning: data definition has no type or storage class
+  113 | calibration_check = 1;
+      | ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:113:1: warning: type defaults to 'int' in declaration of 'calibration_check' [-Wimplicit-int]
+../Core/Src/main.c: In function 'task10ms':
+../Core/Src/main.c:213:10: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  213 |       if(abs(present - avg) < 13*offset) {
+      |          ^~~
+../Core/Src/main.c:213:22: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  213 |       if(abs(present - avg) < 13*offset) {
+      |              ~~~~~~~~^~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/main.c:210:4: warning: enumeration value 'xePOCFD_PowerOn' not handled in switch [-Wswitch]
+  210 |    switch(xe_WearValueState) {
+      |    ^~~~~~
+../Core/Src/main.c:207:9: warning: unused variable 'TransferMin' [-Wunused-variable]
+  207 |   float TransferMin = 0.0;
+      |         ^~~~~~~~~~~
+../Core/Src/main.c:206:9: warning: unused variable 'TransferMax' [-Wunused-variable]
+  206 |   float TransferMax = 2*cfOffsetValue;
+      |         ^~~~~~~~~~~
+../Core/Src/main.c:189:9: warning: unused variable 'fPostAvgFrequency' [-Wunused-variable]
+  189 |   float fPostAvgFrequency = Get0d25PostAvg-fMinBoundary;
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:9: warning: unused variable 'fMaxBoundary' [-Wunused-variable]
+  187 |   float fMaxBoundary = Get0d05PostAvg+cfOffsetValue;
+      |         ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'calibration_away_task':
+../Core/Src/main.c:319:39: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  319 |  snprintf(tx_buff, Buff_len, "freq = %d\r\n", avg);
+      |                                      ~^       ~~~
+      |                                       |       |
+      |                                       int     uint32_t {aka long unsigned int}
+      |                                      %ld
+../Core/Src/main.c: In function 'calibration_close_task':
+../Core/Src/main.c:345:39: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |  snprintf(tx_buff, Buff_len, "freq = %d\r\n", avg);
+      |                                      ~^       ~~~
+      |                                       |       |
+      |                                       int     uint32_t {aka long unsigned int}
+      |                                      %ld
+../Core/Src/main.c: In function 'avg_freq':
+../Core/Src/main.c:677:14: warning: unused variable 'postAVGweight' [-Wunused-variable]
+  677 |  const float postAVGweight = (0.05);
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:675:12: warning: unused variable 'fcurrFreq' [-Wunused-variable]
+  675 |      float fcurrFreq = 0.0;
+      |            ^~~~~~~~~
+../Core/Src/main.c:674:15: warning: unused variable 'fsaveFreq' [-Wunused-variable]
+  674 |  static float fsaveFreq = 0.0;
+      |               ^~~~~~~~~
+At top level:
+../Core/Src/main.c:674:15: warning: 'fsaveFreq' defined but not used [-Wunused-variable]
+arm-none-eabi-gcc -o "proximity_Bruce.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\bruce.lee\STM32CubeIDE\workspace_1.9.0\proximity_Bruce\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="proximity_Bruce.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: proximity_Bruce.elf
+ 
+arm-none-eabi-size   proximity_Bruce.elf 
+arm-none-eabi-objdump -h -S  proximity_Bruce.elf  > "proximity_Bruce.list"
+   text	   data	    bss	    dec	    hex	filename
+  36328	    492	   2500	  39320	   9998	proximity_Bruce.elf
+Finished building: default.size.stdout
+ 
+Finished building: proximity_Bruce.list
+ 
+
+10:37:39 Build Finished. 0 errors, 15 warnings. (took 3s.771ms)
+

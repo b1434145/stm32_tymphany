@@ -1,0 +1,268 @@
+14:56:40 **** Incremental Build of configuration Debug for project SmartMic_G030K8 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:252:26: error: 'xeAW21009' undeclared (first use in this function)
+  252 |                   switch(xeAW21009) {
+      |                          ^~~~~~~~~
+../Core/Src/main.c:252:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:254:28: error: 'xeAW_Empty' undeclared (first use in this function)
+  254 |                       case xeAW_Empty:
+      |                            ^~~~~~~~~~
+../Core/Src/main.c:255:28: error: 'xeAW_SWReset' undeclared (first use in this function)
+  255 |                       case xeAW_SWReset:
+      |                            ^~~~~~~~~~~~
+../Core/Src/main.c:257:27: warning: implicit declaration of function 'aw_i2c_write_one_byte' [-Wimplicit-function-declaration]
+  257 |                           aw_i2c_write_one_byte(AW21xxx_DEVICE_ADDR, 0x70, 0x00);  //Write 00H to RESET
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:257:49: error: 'AW21xxx_DEVICE_ADDR' undeclared (first use in this function)
+  257 |                           aw_i2c_write_one_byte(AW21xxx_DEVICE_ADDR, 0x70, 0x00);  //Write 00H to RESET
+      |                                                 ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:259:36: error: 'xeAW_HWReset_001' undeclared (first use in this function)
+  259 |                           NextStep(xeAW_HWReset_001);
+      |                                    ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:267:36: error: 'xeAW_HWReset_002' undeclared (first use in this function)
+  267 |                           NextStep(xeAW_HWReset_002);
+      |                                    ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:273:36: error: 'xeAW_Global_Current_Configuration' undeclared (first use in this function)
+  273 |                           NextStep(xeAW_Global_Current_Configuration);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:280:36: error: 'xeAW_Brightness_Configuration' undeclared (first use in this function)
+  280 |                           NextStep(xeAW_Brightness_Configuration);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:296:36: error: 'xeAW_Update_the_Brightness_and_SL' undeclared (first use in this function)
+  296 |                           NextStep(xeAW_Update_the_Brightness_and_SL);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:302:36: error: 'xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_001' undeclared (first use in this function)
+  302 |                           NextStep(xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_001);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:310:36: error: 'xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_002' undeclared (first use in this function)
+  310 |                           NextStep(xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_002);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:320:36: error: 'xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_003' undeclared (first use in this function)
+  320 |                           NextStep(xeAW_Light_Effect_Configuration_Single_LED_ON_Mode_003);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:327:27: warning: implicit declaration of function 'aw21xxx_set_brres' [-Wimplicit-function-declaration]
+  327 |                           aw21xxx_set_brres(0);  //0x20 bit2:bit1=10 12bit
+      |                           ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:338:27: warning: implicit declaration of function 'aw21xxx_update_brightness_to_display' [-Wimplicit-function-declaration]
+  338 |                           aw21xxx_update_brightness_to_display();  //Update brightness data
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:341:36: error: 'xeAW_ALL_LEDs_ON_Mode_001' undeclared (first use in this function)
+  341 |                           NextStep(xeAW_ALL_LEDs_ON_Mode_001);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:349:36: error: 'xeAW_ALL_LEDs_ON_Mode_002' undeclared (first use in this function)
+  349 |                           NextStep(xeAW_ALL_LEDs_ON_Mode_002);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c:358:36: error: 'xeAW_ALL_LEDs_ON_Mode_003' undeclared (first use in this function)
+  358 |                           NextStep(xeAW_ALL_LEDs_ON_Mode_003);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:45: note: in definition of macro 'NextStep'
+  245 |               #define NextStep(x) xeAW21009=x;
+      |                                             ^
+../Core/Src/main.c: In function 'Task_Preset_LED_GPIO':
+../Core/Src/main.c:1102:27: error: 'Preset_LED01' undeclared (first use in this function)
+ 1102 |         HAL_GPIO_WritePin(Preset_LED01, u8PresetLED_Save.sb.bit0);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1102:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1102 |         HAL_GPIO_WritePin(Preset_LED01, u8PresetLED_Save.sb.bit0);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1103:27: error: 'Preset_LED02' undeclared (first use in this function)
+ 1103 |         HAL_GPIO_WritePin(Preset_LED02, u8PresetLED_Save.sb.bit1);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1103:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1103 |         HAL_GPIO_WritePin(Preset_LED02, u8PresetLED_Save.sb.bit1);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1104:27: error: 'Preset_LED03' undeclared (first use in this function)
+ 1104 |         HAL_GPIO_WritePin(Preset_LED03, u8PresetLED_Save.sb.bit2);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1104:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1104 |         HAL_GPIO_WritePin(Preset_LED03, u8PresetLED_Save.sb.bit2);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1105:27: error: 'Preset_LED04' undeclared (first use in this function)
+ 1105 |         HAL_GPIO_WritePin(Preset_LED04, u8PresetLED_Save.sb.bit3);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1105:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1105 |         HAL_GPIO_WritePin(Preset_LED04, u8PresetLED_Save.sb.bit3);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1106:27: error: 'Preset_LED05' undeclared (first use in this function)
+ 1106 |         HAL_GPIO_WritePin(Preset_LED05, u8PresetLED_Save.sb.bit4);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1106:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1106 |         HAL_GPIO_WritePin(Preset_LED05, u8PresetLED_Save.sb.bit4);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1107:27: error: 'Preset_LED06' undeclared (first use in this function)
+ 1107 |         HAL_GPIO_WritePin(Preset_LED06, u8PresetLED_Save.sb.bit5);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1107:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1107 |         HAL_GPIO_WritePin(Preset_LED06, u8PresetLED_Save.sb.bit5);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1108:27: error: 'Preset_LED07' undeclared (first use in this function)
+ 1108 |         HAL_GPIO_WritePin(Preset_LED07, u8PresetLED_Save.sb.bit6);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1108:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1108 |         HAL_GPIO_WritePin(Preset_LED07, u8PresetLED_Save.sb.bit6);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1109:27: error: 'Preset_LED08' undeclared (first use in this function)
+ 1109 |         HAL_GPIO_WritePin(Preset_LED08, u8PresetLED_Save.sb.bit7);
+      |                           ^~~~~~~~~~~~
+../Core/Src/main.c:1109:9: error: too few arguments to function 'HAL_GPIO_WritePin'
+ 1109 |         HAL_GPIO_WritePin(Preset_LED08, u8PresetLED_Save.sb.bit7);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:335:19: note: declared here
+  335 | void              HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'Task_Button':
+../Core/Src/main.c:1116:42: error: 'Presets_Switch' undeclared (first use in this function)
+ 1116 |     xfButton.sb.bit0 = !HAL_GPIO_ReadPin(Presets_Switch);
+      |                                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:1116:25: error: too few arguments to function 'HAL_GPIO_ReadPin'
+ 1116 |     xfButton.sb.bit0 = !HAL_GPIO_ReadPin(Presets_Switch);
+      |                         ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:334:19: note: declared here
+  334 | GPIO_PinState     HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1117:42: error: 'Pattern_Switch' undeclared (first use in this function)
+ 1117 |     xfButton.sb.bit1 = !HAL_GPIO_ReadPin(Pattern_Switch);
+      |                                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:1117:25: error: too few arguments to function 'HAL_GPIO_ReadPin'
+ 1117 |     xfButton.sb.bit1 = !HAL_GPIO_ReadPin(Pattern_Switch);
+      |                         ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:334:19: note: declared here
+  334 | GPIO_PinState     HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1118:42: error: 'Headphone_Mute' undeclared (first use in this function)
+ 1118 |     xfButton.sb.bit2 = !HAL_GPIO_ReadPin(Headphone_Mute);
+      |                                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:1118:25: error: too few arguments to function 'HAL_GPIO_ReadPin'
+ 1118 |     xfButton.sb.bit2 = !HAL_GPIO_ReadPin(Headphone_Mute);
+      |                         ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:334:19: note: declared here
+  334 | GPIO_PinState     HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1119:42: error: 'Mix_Mute' undeclared (first use in this function)
+ 1119 |     xfButton.sb.bit3 = !HAL_GPIO_ReadPin(Mix_Mute);
+      |                                          ^~~~~~~~
+../Core/Src/main.c:1119:25: error: too few arguments to function 'HAL_GPIO_ReadPin'
+ 1119 |     xfButton.sb.bit3 = !HAL_GPIO_ReadPin(Mix_Mute);
+      |                         ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:334:19: note: declared here
+  334 | GPIO_PinState     HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+      |                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1120:42: error: 'Mic_Mute' undeclared (first use in this function)
+ 1120 |     xfButton.sb.bit4 = !HAL_GPIO_ReadPin(Mic_Mute);
+      |                                          ^~~~~~~~
+../Core/Src/main.c:1120:25: error: too few arguments to function 'HAL_GPIO_ReadPin'
+ 1120 |     xfButton.sb.bit4 = !HAL_GPIO_ReadPin(Mic_Mute);
+      |                         ^~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32g0xx_hal_conf.h:213,
+                 from ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h:334:19: note: declared here
+  334 | GPIO_PinState     HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+      |                   ^~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+14:56:43 Build Failed. 42 errors, 3 warnings. (took 3s.236ms)
+

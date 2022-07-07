@@ -1,0 +1,10 @@
+14:56:38 **** Incremental Build of configuration Debug for project ProximityTest ****
+make -j4 all 
+arm-none-eabi-size   ProximityTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16008	    120	   1784	  17912	   45f8	ProximityTest.elf
+Finished building: default.size.stdout
+ 
+
+14:56:40 Build Finished. 0 errors, 0 warnings. (took 1s.720ms)
+
